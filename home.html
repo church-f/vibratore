@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vibratore</title>
+</head>
+<body>
+    <div class="alto">
+        <img src="logo.svg" alt="web vibratore" id="logo">
+        <h3>
+            vibratore online per persone povere per un vibratore o un gigolò 
+        </h3>
+    </div>
+    <button onclick="bt()" id="btn">avvia</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var click = false
+        function bt() {
+            if (!click) {
+                btn.innerHTML = "stop";
+                click = true;
+                window.navigator.vibrate(1000000000000000000000);
+            } else {
+                btn.innerHTML = "avvia";
+                click = false;
+                window.navigator.vibrate(0);
+
+            };
+            
+        }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter';
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #logo{
+            width: 70%;
+            height: auto;
+            max-width: 500px;
+        }
+        #btn{
+            width: 230px;
+            height: 80px;
+            background-color: #B61BC4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .alto{
+            width: 100%;
+            position: absolute;
+            top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .alto h3{
+            text-align: center;
+        }
+    </style>
+
+</body>
+</html>
