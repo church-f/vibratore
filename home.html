@@ -18,15 +18,18 @@
     <script>
         var btn = document.getElementById("btn");
         var click = false
+        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
         function bt() {
             if (!click) {
                 btn.innerHTML = "stop";
                 click = true;
-                window.navigator.vibrate(1000000000000000000000);
+                for(i = 0; i<60; i++){
+                    navigator.vibrate(10000);
+                }
             } else {
                 btn.innerHTML = "avvia";
                 click = false;
-                window.navigator.vibrate(0);
+                navigator.vibrate(0);
 
             };
             
